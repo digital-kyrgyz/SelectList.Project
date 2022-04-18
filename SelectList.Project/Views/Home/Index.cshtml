@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var peopleList = (IEnumerable<PeopleVm>)ViewData["People"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">People List</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in peopleList)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Gender</td>
+                    <td>@item.Age</td>
+                    <td>@item.Number</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+</div>
