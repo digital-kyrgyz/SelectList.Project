@@ -6,6 +6,7 @@ using SelectList.Project.ViewModels;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SelectList.Project.Controllers
 {
@@ -21,11 +22,25 @@ namespace SelectList.Project.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var jsonList = _configuration.GetSection("Needs:People").Get<List<PeopleVm>>().ToList();
             ViewData["People"] = jsonList;
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(PeopleVm peole)
+        {
+            if (ModelState.IsValid)
+            {
+                if (true)
+                {
+                    System.Console.WriteLine("Ok");
+                    return RedirectToAction(nameof(HomeController.Privacy), "Home");
+                }
+            }
+            return View(peole);
         }
 
         public IActionResult Privacy()

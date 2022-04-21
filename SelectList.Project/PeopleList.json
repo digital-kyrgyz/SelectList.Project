@@ -1,11 +1,4 @@
 {
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft": "Warning",
-      "Microsoft.Hosting.Lifetime": "Information"
-    }
-  },
   "Needs": {
     "People": [
       {
@@ -28,13 +21,6 @@
         "gender": "female",
         "age": 24,
         "number": "456754675"
-      },
-      {
-        "firstName": "Same",
-        "lastName": "Tomes",
-        "gender": "male",
-        "age": 34,
-        "number": "+996777797472"
       }
     ]
   }
